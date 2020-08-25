@@ -14,7 +14,10 @@ export default function Search() {
         Submit
       </button>
       <button type="button" class="button" id="currentbtn">
-        <span role="emoji"> 📍</span>
+        <span role="img" aria-label="pinpoint">
+          {" "}
+          📍
+        </span>
       </button>
     </div>
   );

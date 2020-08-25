@@ -17,11 +17,16 @@ export default function App() {
         <a
           href="https://github.com/daisyfrancesca/react-weather-app-final-project"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <span>Open Source Code</span>
         </a>{" "}
         |{" "}
-        <a href="https://www.linkedin.com/in/daisyfrancesca/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/daisyfrancesca/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span>Created by Daisy Simpson</span>
         </a>
       </footer>
