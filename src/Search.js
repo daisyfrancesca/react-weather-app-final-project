@@ -14,7 +14,7 @@ export default function Search() {
         Submit
       </button>
       <button type="button" class="button" id="currentbtn">
-        📍
+        <span role="emoji"> 📍</span>
       </button>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Search from "./Search";
 import Weather from "./Weather";
-import { ReactComponent as Logo } from "./logo.svg";
+import Styles from "./Styles.css";
 
 export default function App() {
   return (
@@ -10,23 +10,19 @@ export default function App() {
       <div className="container">
         <h1>Weather in Your City</h1>
         <Search />
-        <div className="columns">
-          <div className="col-md-6">
-            <Logo />
-          </div>
-          <div className="col-md-6" />
-        </div>
         <Weather />
       </div>
+
       <footer>
         <a
           href="https://github.com/daisyfrancesca/react-weather-app-final-project"
           target="_blank"
         >
-          <p>Open Source Code</p>
-        </a>
+          <span>Open Source Code</span>
+        </a>{" "}
+        |{" "}
         <a href="https://www.linkedin.com/in/daisyfrancesca/" target="_blank">
-          <p>Created by Daisy Simpson</p>
+          <span>Created by Daisy Simpson</span>
         </a>
       </footer>
     </div>

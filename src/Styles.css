@@ -1,13 +1,14 @@
 .container {
-  max-width: 800px;
+  max-width: 400px;
   margin: 40px auto;
   padding: 30px;
   border: 4px solid #393e46;
   border-radius: 10px;
-  font-family: "Noto Serif", Serif;
+  font-family: "Arial", Serif;
   background-color: #76ead7;
   color: #393e46;
   text-align: center;
+  display: block;
 }
 
 h1 {
@@ -44,6 +45,11 @@ button {
   text-align: center;
 }
 
-.weather {
+.current-weather {
   text-align: center;
+}
+
+.col-md-6 {
+  display: block;
+  display: flex;
 }
