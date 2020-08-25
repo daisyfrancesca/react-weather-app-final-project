@@ -16,13 +16,14 @@ h1 {
   text-align: left;
 }
 
-.App logo {
+.Weather logo {
   max-width: 300px;
 }
 
 .temperature {
   font-size: 50px;
   font-weight: 300;
+  position: relative;
 }
 
 .unit {
@@ -51,5 +52,4 @@ button {
 
 .col-md-6 {
   display: block;
-  display: flex;
 }
