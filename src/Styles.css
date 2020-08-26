@@ -17,13 +17,13 @@ h1 {
 }
 
 .Weather logo {
-  max-width: 300px;
+  max-width: 100px;
 }
 
 .temperature {
   font-size: 50px;
   font-weight: 300;
-  position: relative;
+  text-align: center;
 }
 
 .unit {
@@ -50,6 +50,6 @@ button {
   text-align: center;
 }
 
-.col-md-6 {
-  display: block;
+.col {
+  padding: 0;
 }
