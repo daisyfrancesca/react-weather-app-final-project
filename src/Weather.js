@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ReactComponent as Logo } from "./logo.svg";
-import UpdatedDate from "./UpdatedDate.js";
+import WeatherInfo from "./WeatherInfo";
 
 export default function WeatherForecast(props) {
   // Declare state variables
@@ -10,7 +10,7 @@ export default function WeatherForecast(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      temperature: response.data.main.temp,
+      temp: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed * 2.237),
       city: response.data.name,
@@ -29,38 +29,7 @@ export default function WeatherForecast(props) {
           <div className="col">
             <Logo />
           </div>
-          <div className="col">
-            <ul className="temp">
-              <span className="temperature">
-                {" "}
-                {Math.round(weatherData.temperature)}{" "}
-              </span>
-              °F
-              <br />
-              <span className="weather-icon">
-                <img
-                  src={weatherData.iconUrl}
-                  alt={weatherData.description}
-                ></img>
-              </span>
-              <br />
-              <p className="current-weather">
-                Updated: <UpdatedDate date={weatherData.date} />
-                <br />
-                Low: {weatherData.low}°F
-                <br />
-                High: {weatherData.high}°F
-                <br />
-                Humidity: {weatherData.humidity}%
-                <br />
-                Wind: {weatherData.wind} mph
-                <br />
-                <span className="text-capitalize">
-                  {weatherData.description}
-                </span>
-              </p>
-            </ul>
-          </div>
+          <WeatherInfo data={weatherData} />
         </div>
       </div>
     );

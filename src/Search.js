@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherInfo from "./WeatherInfo.js";
 
 export default function Search() {
   return (
@@ -10,6 +11,7 @@ export default function Search() {
         id="city-input"
         autocomplete="off"
       />
+
       <button type="submit" className="button" id="button">
         Submit
       </button>
@@ -19,6 +21,7 @@ export default function Search() {
           📍
         </span>
       </button>
+      <WeatherInfo />
     </div>
   );
 }
