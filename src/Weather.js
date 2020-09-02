@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ReactComponent as Logo } from "./logo.svg";
+import UpdatedDate from "./UpdatedDate.js";
 
 export default function WeatherForecast(props) {
   // Declare state variables
@@ -15,7 +16,7 @@ export default function WeatherForecast(props) {
       city: response.data.name,
       description: response.data.weather[0].description,
       iconUrl: "http://openweathermap.org/img/wn/10d@2x.png",
-      date: "Wednesday",
+      date: new Date(response.data.dt * 1000),
       low: response.data.main.temp_min,
       high: response.data.main.temp_max,
     });
@@ -44,7 +45,7 @@ export default function WeatherForecast(props) {
               </span>
               <br />
               <p className="current-weather">
-                Updated: {weatherData.date}
+                Updated: <UpdatedDate date={weatherData.date} />
                 <br />
                 Low: {weatherData.low}°F
                 <br />
