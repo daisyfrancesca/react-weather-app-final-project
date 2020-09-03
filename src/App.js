@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Search from "./Search";
 import Weather from "./Weather";
 import Styles from "./Styles.css";
 
@@ -9,7 +8,6 @@ export default function App() {
     <div className="App">
       <div className="container">
         <h1>Weather in Your City</h1>
-        <Search />
         <Weather defaultCity="London" />
       </div>
 

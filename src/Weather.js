@@ -3,9 +3,10 @@ import axios from "axios";
 import { ReactComponent as Logo } from "./logo.svg";
 import WeatherInfo from "./WeatherInfo";
 
-export default function WeatherForecast(props) {
+export default function Weather(props) {
   // Declare state variables
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
   //associated function
   function handleResponse(response) {
     setWeatherData({
@@ -21,10 +22,50 @@ export default function WeatherForecast(props) {
       high: response.data.main.temp_max,
     });
   }
+
+  function search() {
+    const apiKey = "d643ee59f43b44ad31e57464532264d8";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  //submit function
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   //if else statement for API call
   if (weatherData.ready) {
     return (
       <div>
+        <form onSubmit={handleSubmit}>
+          <div className="search-container">
+            <input
+              type="search"
+              className="form-control"
+              placeholder="Enter City Here"
+              id="city-input"
+              autocomplete="off"
+              onChange={handleCityChange}
+            />
+
+            <button type="submit" className="button" id="button">
+              Submit
+            </button>
+            <button type="button" class="button" id="currentbtn">
+              <span role="img" aria-label="pinpoint">
+                {" "}
+                📍
+              </span>
+            </button>
+          </div>
+        </form>
         <div class="row">
           <div className="col">
             <Logo />
@@ -34,11 +75,7 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    const apiKey = "d643ee59f43b44ad31e57464532264d8";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
-
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }
