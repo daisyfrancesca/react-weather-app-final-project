@@ -1,7 +1,7 @@
 import React from "react";
 import UpdatedDate from "./UpdatedDate";
 import WeatherIcon from "./WeatherIcon";
-import Styles from "./Styles.css";
+import WeatherTemp from "./WeatherTemp";
 
 export default function WeatherInfo(props) {
   return (
@@ -9,9 +9,7 @@ export default function WeatherInfo(props) {
       <div className="col">
         <ul className="temp">
           <h4 className="current-city">{props.data.city}</h4>
-          <span className="temperature"> {Math.round(props.data.temp)} </span>
-          °F
-          <br />
+          <WeatherTemp farenheit={props.data.temp} />
           <span className="weather-icon">
             <WeatherIcon code={props.data.icon} />
           </span>
