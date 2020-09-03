@@ -1,5 +1,4 @@
 import React from "react";
-import WeatherInfo from "./WeatherInfo.js";
 
 export default function Search() {
   return (
@@ -21,7 +20,6 @@ export default function Search() {
           📍
         </span>
       </button>
-      <WeatherInfo />
     </div>
   );
 }
