@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ReactComponent as Logo } from "./logo.svg";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   // Declare state variables
@@ -72,6 +73,7 @@ export default function Weather(props) {
           </div>
           <WeatherInfo data={weatherData} />
         </div>
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {
