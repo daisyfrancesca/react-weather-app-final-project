@@ -59,19 +59,15 @@ export default function Weather(props) {
             <button type="submit" className="button" id="button">
               Submit
             </button>
-            <button type="button" class="button" id="currentbtn">
-              <span role="img" aria-label="pinpoint">
-                {" "}
-                📍
-              </span>
-            </button>
           </div>
         </form>
         <div class="row">
           <div className="col">
             <Logo />
           </div>
-          <WeatherInfo data={weatherData} />
+          <div className="col">
+            <WeatherInfo data={weatherData} />
+          </div>
         </div>
         <WeatherForecast city={weatherData.city} />
       </div>
