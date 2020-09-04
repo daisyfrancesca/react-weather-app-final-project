@@ -1,6 +1,7 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 
+//setup forecast preview
 export default function WeatherPreview(props) {
   function hours() {
     let date = new Date(props.data.dt * 1000);

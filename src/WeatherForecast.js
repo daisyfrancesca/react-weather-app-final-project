@@ -4,6 +4,7 @@ import "./WeatherForecast.css";
 import WeatherPreview from "./WeatherPreview";
 
 export default function WeatherForecast(props) {
+  //set states
   const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 

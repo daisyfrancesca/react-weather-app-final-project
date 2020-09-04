@@ -3,6 +3,8 @@ import UpdatedDate from "./UpdatedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemp from "./WeatherTemp";
 
+//layout image to the left and weather information on the right
+
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">

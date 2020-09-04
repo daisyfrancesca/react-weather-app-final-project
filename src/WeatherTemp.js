@@ -12,6 +12,7 @@ export default function WeatherTemp(props) {
     event.preventDefault();
     setUnit("imperial");
   }
+  //unit switching
   if (unit === `imperial`) {
     return (
       <div className="weatherTemp">
