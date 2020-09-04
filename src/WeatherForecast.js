@@ -13,8 +13,7 @@ export default function WeatherForecast(props) {
   }
   //make a call to display a forecast
 
-  if (loaded) {
-    console.log(forecast);
+  if (loaded && props.city === forecast.city.name) {
     return (
       <div className="WeatherForecast row">
         <WeatherPreview data={forecast.list[0]} />
