@@ -6,7 +6,11 @@ export default function WeatherPreview(props) {
   function hours() {
     let date = new Date(props.data.dt * 1000);
     let hours = date.getHours();
-    const time = (hours - 12) <= 0 ? `${hours}:00 AM` : `${hours - 12}:00 PM`
+    const time = (hours - 12) == 0
+      ? `12:00 AM`
+      : (hours - 12) <= 0
+        ? `${hours}:00 AM`
+        : `${hours - 12}:00 PM`;
     return time;
   }
 
