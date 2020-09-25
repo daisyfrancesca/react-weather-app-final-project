@@ -11,19 +11,19 @@ export default function UpdatedDate(props) {
     "Saturday",
   ];
 
-  props = props.date
+  props = props.date;
 
   let correctedOffset = ((props.timeZoneOffset * 100) / 60 / 60);
-  correctedOffset = correctedOffset / 100
+  correctedOffset = correctedOffset / 100;
 
-  let currentDate = (new Date().toISOString()).replace(/\.\d*Z/, "")
-  props.utcDate = new Date(currentDate)
+  let currentDate = (new Date().toISOString()).replace(/\.\d*Z/, "");
+  props.utcDate = new Date(currentDate);
 
   let day = days[props.utcDate.getDay()];
   let hours = props.utcDate.getHours() + correctedOffset;
   let minutes = props.utcDate.getMinutes();
 
-  hours = hours < 0 ? 24 + hours : hours
+  hours = hours < 0 ? 24 + hours : hours;
 
   if (hours < 10) {
     hours = `0${hours}`;
@@ -31,10 +31,15 @@ export default function UpdatedDate(props) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   return (
     <div>
       {" "}
-      {day} {(hours - 12) <= 0 ? `${hours}:${minutes} AM` : `${hours - 12}:${minutes} PM`}
+      {day} { (hours - 12) == 0 
+        ? `12:${minutes} AM` 
+        : (hours - 12) <= 0 
+          ? `${hours}:${minutes} AM` 
+          : `${hours - 12}:${minutes} PM`}
     </div>
   );
 }
