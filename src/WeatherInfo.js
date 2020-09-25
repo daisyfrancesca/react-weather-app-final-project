@@ -16,7 +16,7 @@ export default function WeatherInfo(props) {
         </span>
         <br />
         <p className="current-weather">
-          <UpdatedDate date={props.data.date} />
+          <UpdatedDate date={props.data} />
           <br />
           Low: {Math.round(props.data.low)}°F
           <br />

@@ -21,6 +21,7 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       low: response.data.main.temp_min,
       high: response.data.main.temp_max,
+      timeZoneOffset: response.data.timezone
     });
   }
 
