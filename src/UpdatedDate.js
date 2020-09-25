@@ -22,7 +22,7 @@ export default function UpdatedDate(props) {
   return (
     <div>
       {" "}
-      {day} {hours}:{minutes}
+      {day} {(hours - 12) <= 0 ? `${hours}:${minutes} AM` : `${hours - 12}:${minutes} PM`}
     </div>
   );
 }
